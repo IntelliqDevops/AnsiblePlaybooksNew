@@ -1,0 +1,20 @@
+---
+- name: Install git and clone a remote git repo and modify the permissions
+  hosts: all
+  tasks:
+    - name: Install git
+      apt:
+        name: git
+        state: present
+        update_cache: yes
+    - name: Clone a remote git repo
+      git:
+        repo: https://github.com/IntelliqDevops/maven.git
+        dest: /tmp/mygit
+    - name: Change permissions of the clone data
+      file:
+        name: /tmp/mygit
+        mode: 750
+        owner: Ravi
+        group: root
+...
