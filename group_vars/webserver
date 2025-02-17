@@ -1,0 +1,7 @@
+---
+a: firewalld
+b: present
+c: yes
+d: https://get.jenkins.io/war-stable/2.492.1/jenkins.war
+e: /tmp
+...

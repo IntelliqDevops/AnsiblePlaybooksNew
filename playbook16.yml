@@ -1,0 +1,14 @@
+---
+- name: Install/uninstall/upgrade s/w applications
+  hosts: all
+  tasks:
+    - name: Install,unisntall s/w apps
+      apt:
+        name: "{{item.a}}"
+        state: "{{item.b}}"
+        update_cache: "{{item.c}}"
+      with_items:
+        - {a: tree,b: present,c: no}
+        - {a: maven,b: absent,c: no}
+        - {a: openjdk-17-jdk,b: latest,c: yes}
+...

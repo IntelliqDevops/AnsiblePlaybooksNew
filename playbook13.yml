@@ -1,0 +1,8 @@
+---
+- name: Dowload jenkins.war uisng host scope variables
+  hosts: webserver
+  tasks:
+    - name: Download jenkins.war
+      get_url:
+        url: "{{d}}"
+        dest: "{{e}}"
